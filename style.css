@@ -51,6 +51,7 @@ table {
 
 body {
     font-family: "Roboto";
+    color: white;
 }
 
 .container {
@@ -60,11 +61,11 @@ body {
 }
 
 .sidebar {
-    background-color: rgb(133, 253, 227);
+    background-color: rgb(0, 150, 117);
     grid-column: 1 / 2;
     grid-row: 1 / 3;
-    display: grid;
-    grid-auto-rows: auto;
+    display: flex;
+    flex-direction: column;
     font-weight: bold;
 }
 
@@ -103,17 +104,24 @@ body {
     margin-top: 40px;
 }
 
+#profile-picture {
+    border: 1px solid white;
+    border-radius: 32px;
+}
+
 .header {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     display: grid;
+    background-color: rgb(49, 49, 49);
 }
 
 .top-header {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
     display: flex;
-    margin: 32px 0 32px 32px;
+    margin: 32px 64px 32px 32px;
+    align-items: center;
 }
 
 .top-header img {
@@ -121,22 +129,173 @@ body {
     margin-right: 16px;
 }
 
+.top-header #profile-picture {
+    height: 32px;
+}
+
 .top-header input {
     border: none;
-    background-color: rgb(221, 223, 226);
+    background-color: rgb(131, 131, 131);
     border-radius: 32px;
+    height: 28px;
+    flex-grow: 1;
+}
+
+.top-header #notifications {
+    margin-left: 128px;
 }
 
 .bottom-header {
     grid-column: 1 / 3;
     grid-row: 2 / 3;
     display: flex;
+    gap: 16px;
+    margin: 0 64px 16px 32px;
+    align-items: center;
+}
+
+.bottom-header div #greeting {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.bottom-header .left-side {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    gap: 16px;
+}
+
+.bottom-header button {
+    background-color: rgb(0, 150, 117);
+    border: none;
+    width: 96px;
+    height: 32px;
+    border-radius: 32px;
 }
 
 .main-content {
-    background-color: rgb(221, 223, 226);
+    background-color: rgb(131, 131, 131);
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 1fr 25%;
+    grid-template-rows: 1fr 1fr;
+    gap: 32px;
+}
+
+.your-projects {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.your-projects > p {
+    margin: 32px 0 8px 16px;
+    font-weight: bold;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 0 0 16px 16px;
+    gap: 32px;
+}
+
+.project-card {
+    background-color: rgb(49, 49, 49);
+    border-radius: 8px;
+    display: grid;
+}
+
+.project-card .content {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-rows: 1fr minmax(80px, auto) 64px;
+}
+
+.project-card h1 {
+    grid-row: 1 / 2;
+    margin: 16px 0 8px 16px;
+}
+
+.project-card p {
+    grid-row: 2 / 3;
+    margin: 0 64px 0px 16px;
+}
+
+.project-card .icons {
+    grid-row: 3 / 4;
+    display: flex;
+    justify-content: end;
+    gap: 24px;
+    margin: 0 32px 32px 0;
+}
+
+.project-card .content .icons img {
+    height: 32px;
+}
+
+.project-card .content p {
+    font-size: 12px;
+    color: rgb(207, 207, 207);
+}
+
+.edge-color {
+    grid-column: 1 / 2;
+    background-color: rgb(225, 86, 0);
+    width: 8px;
+    border-radius: 8px 0 0 8px;
+}
+
+.announcements {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin: 32px 0 0 0;
+    border: 1px solid blue;
+}
+
+.announcements > p {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.announcements .content {
+    background-color: rgb(49, 49, 49);
+    border-radius: 8px;
+    margin-right: 32px;
+    padding: 8px 32px 40px 32px;
+}
+
+.content div h1 {
+    margin-top: 32px;
+}
+
+.content div p {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.trending {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    border: 1px solid red;
+    margin-right: 32px;
+}
+
+.trending .content {
+    background-color: rgb(49, 49, 49);
+}
+
+.trending .content .trending-person {
+    display: flex;
+}
+
+.trending .content div img {
+    border: 1px solid white;
+    border-radius: 64px;
 }
 
 img {
