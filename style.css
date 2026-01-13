@@ -122,6 +122,7 @@ body {
     display: flex;
     margin: 32px 64px 32px 32px;
     align-items: center;
+    font-weight: bold;
 }
 
 .top-header img {
@@ -159,6 +160,10 @@ body {
     margin-bottom: 8px;
 }
 
+.bottom-header .left-side #user-greeting .name {
+    font-weight: bold;
+}
+
 .bottom-header .left-side {
     display: flex;
     flex-grow: 1;
@@ -180,7 +185,7 @@ body {
     grid-row: 2 / 3;
     display: grid;
     grid-template-columns: 1fr 25%;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
     gap: 32px;
 }
 
@@ -254,7 +259,6 @@ body {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     margin: 32px 0 0 0;
-    border: 1px solid blue;
 }
 
 .announcements > p {
@@ -266,11 +270,7 @@ body {
     background-color: rgb(49, 49, 49);
     border-radius: 8px;
     margin-right: 32px;
-    padding: 8px 32px 40px 32px;
-}
-
-.content div h1 {
-    margin-top: 32px;
+    padding: 32px 32px 40px 32px;
 }
 
 .content div p {
@@ -281,23 +281,58 @@ body {
 .trending {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    border: 1px solid red;
     margin-right: 32px;
+}
+
+.trending > p {
+    font-weight: bold;
+    margin-bottom: 8px;
 }
 
 .trending .content {
     background-color: rgb(49, 49, 49);
+    border-radius: 8px;
+    padding: 16px 0 16px 32px;
 }
 
 .trending .content .trending-person {
     display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.profile-infos h1,
+.profile-infos p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trending-person {
+    margin: 8px 0 8px 0;
 }
 
 .trending .content div img {
     border: 1px solid white;
     border-radius: 64px;
+    margin-right: 16px;
 }
 
 img {
     height: 48px;
+}
+
+.sidebar img,
+.header img,
+.project-card img,
+.content .trending-person img {
+    filter: brightness(0) invert(1);
+}
+
+.project-card,
+.announcements .content,
+.trending .content,
+.header {
+    box-shadow: 0px 8px 5px rgb(45, 45, 45);
+    z-index: 1;
 }
